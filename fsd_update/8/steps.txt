@@ -1,0 +1,18 @@
+steps
+
+after running server  (npm run start)
+
+open mongodb in terminal (cmd-> mongosh)
+
+and type the following commands:-
+
+i) show dbs
+ -> there u will see 'question10'  (if it is not comming then try to run everything properly)
+
+ii) use question10
+
+
+iii)db.datas.insertOne({"data":"Aarize"})
+
+
+then go back to client and run "npm run dev"

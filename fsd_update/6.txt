@@ -1,0 +1,55 @@
+mongosh
+
+1)
+use student1
+db.stud1col1.insertMany([
+    {srn: 110, sname: "Rahul", degree: "BCA", sem: 6, CGPA: 7.9},
+    // Add remaining documents here
+]);
+
+2)
+use student1
+db.stud1col1.insertMany([
+    { srn: 110, sname: "Rahul", degree: "BCA", sem: 6, CGPA: 7.9 },
+    { srn: 111, sname: "Amit", degree: "BBA", sem: 5, CGPA: 8.2 },
+    { srn: 112, sname: "Sara", degree: "BCA", sem: 6, CGPA: 8.5 },
+    { srn: 113, sname: "John", degree: "BBA", sem: 5, CGPA: 7.6 },
+    { srn: 114, sname: "Lisa", degree: "BCA", sem: 6, CGPA: 9.0 },
+    { srn: 115, sname: "Mike", degree: "BBA", sem: 5, CGPA: 8.9 },
+    { srn: 116, sname: "Priya", degree: "BCA", sem: 6, CGPA: 8.7 },
+    { srn: 117, sname: "David", degree: "BBA", sem: 5, CGPA: 7.8 },
+    { srn: 118, sname: "Neha", degree: "BCA", sem: 6, CGPA: 7.2 },
+    { srn: 119, sname: "Raj", degree: "BBA", sem: 5, CGPA: 8.0 }
+])
+
+3)
+Display all the documents:
+db.stud1col1.find({})
+
+4)
+Display all the students in BCA:
+db.stud1col1.find({ degree: "BCA" })
+
+5)
+Display all the students in ascending order:
+db.stud1col1.find().sort({ CGPA: 1 })
+
+6)
+Display first 5 students:
+db.stud1col1.find().limit(5)
+
+7)
+Display students 5, 6, 7:
+db.stud1col1.find().skip(4).limit(3)
+
+8)
+List the degree of student "Rahul":
+db.stud1col1.find({ sname: "Rahul" }, { degree: 1, _id: 0 })
+
+9)
+Display students' details of 5, 6, 7 in descending order of percentage:
+db.stud1col1.find().skip(4).limit(3).sort({ CGPA: -1 })
+
+10)
+Display the number of students in BCA:
+db.stud1col1.find({ degree: "BCA" }).count()

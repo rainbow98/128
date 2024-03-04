@@ -1,0 +1,13 @@
+steps:
+  
+ 1st) for each client and server ,  cd into that particular folder and do 'npm install' 
+
+Note:- in question 3 and 6 only client is there, no backend
+
+2nd)
+        to run  client:- use 'npm run dev'
+        to run server:- use 'npm run start'
+
+
+
+
